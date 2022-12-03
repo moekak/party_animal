@@ -1,0 +1,24 @@
+<div class="sign_in">
+      <div class="sign_in_container">
+        <div class="log-in">
+          <h1>Edit</h1>
+        </div>
+        <%= form_with model: @user, url: user_path, method: :patch do |f| %>
+
+          <div class='col-3'>
+            <%= f.file_field :image, accept: "image/*" %>
+          </div>
+          <div class="name">
+            <i class="fas fa-user"></i>
+            <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "input" %>
+          </div>
+          <div class="email">
+            <i class="far fa-envelope"></i>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input" %>
+          </div>
+          <div class="button">
+            <%= f.submit "Update User", class: "sign_up_button" %>
+          </div>
+        <% end %>
+      </div>
+    </div>

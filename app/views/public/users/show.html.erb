@@ -1,0 +1,139 @@
+<div class='user_show_top'>
+  <div class='container-fluid px-0'>
+    <div class='row m-0'>
+      <div class='col-lg-3  user_nav px-5 pt-5'>
+        <div class='container'>
+          <div class='row justify-content-center'>
+             <%= image_tag @user.get_profile_image(300,200), class: 'profile_image' %>
+          </div>
+          <div class='row justify-content-center mt-4'>
+            <h3><%= @user.name %></h3>
+          </div>
+          <div class='row justify-content-center'>
+            <%= @user.email %>
+          </div>
+          <div class='row justify-content-center my-5'>
+            <%= link_to edit_user_path(@user.id), method: :get, class: "btn btn-outline-secondary px-5" do %>
+              <i class="fas fa-user-cog fs-3 text-dark"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <!--ブックマークに登録してるものを表示する-->
+      <div class='col-lg-9  bookmark_container'>
+        <div class='container-fluid'>
+          <h2 class='mt-4'>Bookmark</h2>
+          <div class='row mt-5 mx-2 ' id= "bookmark_events">
+            <% @bookmarks.each do |bookmark| %>
+              <div class='mx-4 mb-5  p-0 first_post_second'>
+                <div class='card card_container'>
+                  <div class='card_image'>
+                    <% if bookmark.post.image.attached? %>
+                      <%= image_tag bookmark.post.image, class: 'card-image-header' %>
+                    <% end %>
+                  </div>
+                  <div class='card_button'>
+                    <%= link_to post_path(bookmark.post.id) do %>
+                        <i class="fas fa-bars" style="color:white;"></i>
+                    <% end %>
+                  </div>
+                </div>
+                <div class='container px-4'>
+                  <div class='row mt-5'>
+                    <div class='col justify-content-center'>
+                      <p class='post_date_second justify-content-center'><%= bookmark.post.date %> | <%= bookmark.post.time.strftime( "%H:%M" ) %> </p>
+                    </div>
+                  </div>
+                  <div class='row'>
+                    <div class='col'>
+                      <h3 class='post_title_second'><%= bookmark.post.title %></h3>
+                    </div>
+                  </div>
+                  <div class='row'>
+                    <div class='col'>
+                      <p class='post_description_second'><%= bookmark.post.description %></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <!--参加するイベント-->
+          <h2 class='mt-5'>Going</h2>
+          <div class='row mt-5 mx-2 ' id= "join_events">
+            <% @post_group_users.each do |group_user| %>
+              <div class='mx-4 mb-5  p-0 first_post_second'>
+                <div class='card card_container'>
+                  <div class='card_image'>
+                    <% if group_user.post.image.attached? %>
+                      <%= image_tag group_user.post.image, class: 'card-image-header' %>
+                    <% end %>
+                  </div>
+                  <div class='card_button'>
+                    <%= link_to post_path(group_user.post.id) do %>
+                        <i class="fas fa-bars" style="color:white;"></i>
+                    <% end %>
+                  </div>
+                </div>
+                <div class='container px-4'>
+                  <div class='row mt-5'>
+                    <div class='col justify-content-center'>
+                      <p class='post_date_second justify-content-center'><%= group_user.post.date %> | <%= group_user.post.time.strftime( "%H:%M" ) %> </p>
+                    </div>
+                  </div>
+                  <div class='row'>
+                    <div class='col'>
+                      <h3 class='post_title_second'><%= group_user.post.title %></h3>
+                    </div>
+                  </div>
+                  <div class='row'>
+                    <div class='col'>
+                      <p class='post_description_second'><%= group_user.post.description %></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

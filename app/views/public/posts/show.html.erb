@@ -1,0 +1,185 @@
+
+ <!-- first_container -->
+ <div class='container main'>
+   <div class='row my-5 justify-content-center'>
+     <div class='col-lg-6 col-md-11 col-sm-12 col-11 mt-5 mx-5'>
+       <div class='container'>
+          <div class='row'>
+            <div class='col mb-4'>
+              <% if @post.bookmarked_by?(current_user) %>
+                <%= link_to  post_bookmarks_path(@post), method: :delete do %>
+                  <i class="fas fa-bookmark fa-3x"></i>
+                <% end %>
+              <% else %>
+                <%= link_to  post_bookmarks_path(@post),  method: :post do %>
+                  <i class="far fa-bookmark fa-3x"></i>
+                <% end %>
+              <% end %>
+            </div>
+
+
+          </div>
+          <div class='row  first_container_post'>
+           <% if @post.image.attached? %>
+              <%= image_tag @post.image, class: 'card-image-header_second' %>
+            <% end %>
+         </div>
+         <div class='row mt-5'>
+           <h1 class="second"><%= @post.title%></h1>
+         </div>
+         <div class='row mt-3'>
+           <p><%= @post.description %></p>
+         </div>
+         <div class='row info mt-5 mb-5'>
+           detailed information
+         </div>
+         <div class='row details'>
+           <div class='col-lg-1 col-md-1 col-sm-1 col-1'>
+             <i class="far fa-calendar-plus"></i>
+           </div>
+           <div class='col-lg-5 col-md-5 col-sm-5 col-3'>
+             <p>date</p>
+           </div>
+           <div class='col-lg-6 col-md-6 col-sm-6 col-7'>
+             <%= @post.date %>   <%= @post.time.strftime( "%H:%M" ) %>
+           </div>
+         </div>
+         <div class='row details pt-3'>
+           <div class='col-lg-1 col-md-1 col-sm-1 col-1'>
+             <i class="fas fa-map-marker-alt"></i>
+           </div>
+           <div class='col-lg-5 col-md-5 col-sm-5 col-3'>
+             <p>place</p>
+           </div>
+           <div class='col-lg-6 col-md-6 col-sm-6 col-7'>
+             <%= @post.place %>
+           </div>
+         </div>
+         <div class='row details pt-3'>
+           <div class='col-lg-1 col-md-1 col-sm-1 col-1'>
+             <i class="fas fa-dollar-sign"></i>
+           </div>
+           <div class='col-lg-5 col-md-5 col-sm-5 col-3'>
+             <p>price</p>
+           </div>
+           <div class='col-lg-6 col-md-6 col-sm-6 col-7'>
+             <%= @post.price %>
+           </div>
+         </div>
+         <div class='row mt-5 justify-content-center'>
+            <div class='col justify-content-center'>
+              <% if @post.user_id == current_user.id  %>
+                <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-sm btn-success mb-4 px-4 py-2" %>
+              <% end %>
+              <% if @post.date.to_s > DateTime.now  %>
+                <% if @post.includesUser?(current_user) %>
+                  <%= link_to 'cancel this event', post_group_users_path(@post), method: :delete, class: "btn btn-sm btn-danger mb-4 px-4 py-2" %>
+                <% else %>
+                  <%= link_to 'Join this event', post_group_users_path(@post), method: :post, class: "btn btn-sm btn-success mb-4 px-4 py-2" %>
+                <% end %>
+              <% else %>
+                <p>This event is already past</p>
+              <% end %>
+            </div>
+          </div>
+       </div>
+     </div>
+     <div class='col-lg-3 col-md-11 col-sm-12 col-11 mt-5 mx-5'>
+        <div class="container">
+            <h2 class='header_name'>Organizer</h2>
+            <div class='row profile_image_container mt-5 justify-content-center'>
+              <%= image_tag @post.user.get_profile_image(100, 100), class: "profile_pic" %>
+            </div>
+            <div class="row border-bottom mb-4 mt-4 center-block">
+              <div class="col-1">
+                <i class="fas fa-user"></i>
+              </div>
+              <div class='col'>
+                <%= @post.user.name %>
+              </div>
+            </div>
+            <div class="row border-bottom">
+              <div class="col-1">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class='col'>
+                <%= @post.user.email %>
+              </div>
+            </div>
+          </div>
+          <div class="container pt-5 ">
+            <h2 class='header_name'>Attendess (<%= @post.group_users.count %>)</h2>
+              <div class="row mt-4">
+                 <% @post.group_users.each do |user| %>
+                   <div class='col-2 '>
+                     <%= image_tag user.user.get_profile_image(50,50), class: "going" %>
+                   </div>
+                  <% end %>
+              </div>
+          </div>
+
+          <div class='container'>
+            <div class='row pt-5 pb-5'>
+              <div class='col'>
+                <%= link_to post_post_comments_path(post_id: @post.id) do %>
+                  <h2 class='header_name'>Comment(<%= @post.post_comments.count %>)</h2>
+                <% end %>
+              </div>
+            </div>
+          <% if @post.post_comments.count < 6 %>
+            <% @post.post_comments.each do |post_comment| %>
+              <%# if post_comment.comment.count < 4 %>
+                <div class='row'>
+                  <div class= "col px-0">
+                    <div class='container'>
+                      <div class='row'>
+                        <div class='col-3 px-0'>
+                          <%= image_tag post_comment.user.get_profile_image(50,50),class: 'going' %>
+                        </div>
+                        <div class='col px-0'>
+                          <div class='container'>
+                            <div class='row'>
+                              <p class='bold'><%=post_comment.user.name %></p>
+                            </div>
+                            <div class='row'>
+                              <%= post_comment.comment %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <%# else %>
+                <%#= link_to "see more", user_path %>
+              <%# end %>
+            <% end %>
+          <% else %>
+            <%= link_to "see more", post_post_comments_path(post_id: @post.id) %>
+          <% end %>
+
+
+          </div>
+          <div class='container mt-5'>
+            <%= form_with model: [@post, @post_comment] do |f| %>
+              <div class='row'>
+                <%= f.text_area :comment, rows: '5', placeholder: "Write your comment here", class: 'text' %>
+              </div>
+              <div class='row'>
+                <%= f.submit "submit", class: "comment_submit mt-4" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     </div>
+   </div>
+ </div>
+<% require "date" %>
+
+
+
+
+

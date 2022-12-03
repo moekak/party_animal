@@ -1,0 +1,42 @@
+
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "public/shared/error_messages", resource: resource %>
+
+  <div class="sign_in">
+      <div class="sign_in_container">
+        <div class="log-in">
+          <h1>Sign up</h1>
+        </div>
+        <div class="name">
+          <i class="fas fa-user"></i>
+          <%= f.text_field :name, autofocus: true, autocomplete: "name",  class: "input" %>
+        </div>
+        <div class="email">
+          <i class="far fa-envelope"></i>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input" %>
+        </div>
+        <div class="password">
+          <i class="fas fa-lock"></i>
+          <div class= "password_field">
+            <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "new-password", class: "input" %>
+          </div>
+        </div>
+        <div class="password">
+          <i class="fas fa-lock"></i>
+          <div class="field">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input" %>
+          </div>
+        </div>
+
+        <div class="button">
+          <%= f.submit "Sign up", class: "sign_up_button" %>
+        </div>
+      </div>
+    </div>
+<% end %>
+

@@ -1,0 +1,67 @@
+
+  <%= form_with model: @post, url: post_path, method: :patch do |f| %>
+    <div class="container mt-5">
+      <div class='row mt-3 align-items-center'>
+        <div class='col-lg-2'>
+          Image
+        </div>
+        <div class='col-lg-3'>
+          <%= f.file_field :image, accept: "image/*" %>
+        </div>
+      </div>
+      <div class='row mt-3 align-items-center'>
+        <div class='col-lg-2'>
+          Title
+        </div>
+        <div class='col-lg-3'>
+          <%= f.text_field :title, placeholder: "Let's learn English!" %>
+        </div>
+      </div>
+      <div class='row mt-3 align-items-center'>
+        <div class='col-lg-2'>
+          Date
+        </div>
+        <div class='col-lg-3 my-1'>
+         <%= f.date_field :date, class: 'form-control' %>
+        </div>
+        <div class='col-lg-3 my-1'>
+         <%= f.time_field :time, class: 'form-control' %>
+        </div>
+      </div>
+      <div class='row mt-3 align-items-center'>
+        <div class='col-lg-2'>
+          Description
+        </div>
+        <div class='col-lg-3'>
+          <%= f.text_field :description, placeholder: "ジャンル名" %>
+        </div>
+      </div>
+      <div class='row mt-3 align-items-center'>
+        <div class='col-lg-2'>
+          Place
+        </div>
+        <div class='col-lg-3'>
+          <%= f.text_field :place, placeholder: "ジャンル名" %>
+        </div>
+      </div>
+      <div class='row mt-3 align-items-center'>
+        <div class='col-lg-2'>
+          Address
+        </div>
+        <div class='col-lg-3'>
+          <%= f.text_field :address, placeholder: "ジャンル名" %>
+        </div>
+      </div>
+      <div class='row mt-3 align-items-center'>
+        <div class='col-lg-2'>
+          Price
+        </div>
+        <div class='col-lg-3'>
+          <%= f.text_field :price, placeholder: "ジャンル名" %>
+        </div>
+      </div>
+      <div class='row m-5'>
+        <%= f.submit "Create", class: "create_button" %>
+      </div>
+    </div>
+  <% end %>

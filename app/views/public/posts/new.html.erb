@@ -1,0 +1,93 @@
+<% if @post.errors.any? %>
+  <%= @post.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @post.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+
+  <%= form_with model: @post, url: posts_path do |f| %>
+    <div class="container mt-5">
+      <div class='row mt-3 align-items-center'>
+        <div class='col-2'>
+          Image
+        </div>
+        <div class='col-3'>
+          <%= f.file_field :image, accept: "image/*" %>
+        </div>
+      </div>
+      <div class='row mt-3 align-items-center'>
+        <div class='col-2'>
+          Title
+        </div>
+        <div class='col-3'>
+          <%= f.text_field :title, placeholder: "Let's learn English!" %>
+        </div>
+      </div>
+      <div class='row mt-3 align-items-center'>
+        <div class='col-2'>
+          Date
+        </div>
+        <div class='col-3'>
+         <%= f.date_field :date, class: 'form-control' %>
+        </div>
+        <div class='col-3'>
+         <%= f.time_field :time, class: 'form-control' %>
+        </div>
+      </div>
+      <div class='row mt-3 align-items-center'>
+        <div class='col-2'>
+          Description
+        </div>
+        <div class='col-3'>
+          <%= f.text_field :description, placeholder: "ジャンル名" %>
+        </div>
+      </div>
+      <div class='row mt-3 align-items-center'>
+        <div class='col-2'>
+          Place
+        </div>
+        <div class='col-3'>
+          <%= f.text_field :place, placeholder: "ジャンル名" %>
+        </div>
+      </div>
+      <div class='row mt-3 align-items-center'>
+        <div class='col-2'>
+          Address
+        </div>
+        <div class='col-3'>
+          <%= f.text_field :address, placeholder: "ジャンル名" %>
+        </div>
+      </div>
+      <div class='row mt-3 align-items-center'>
+        <div class='col-2'>
+          Price
+        </div>
+        <div class='col-3'>
+          <%= f.text_field :price, placeholder: "ジャンル名" %>
+        </div>
+      </div>
+      <div class='row mt-3 align-items-center'>
+        <div class='col-2'>
+          Belongings
+        </div>
+        <div class='col-3'>
+          <%= f.text_field :belongings, placeholder: "ジャンル名" %>
+        </div>
+      </div>
+      <div class='row mt-3 align-items-center'>
+        <div class='col-2'>
+          Participants List
+        </div>
+        <div class='col-3'>
+          <%= f.text_field :participants_list, placeholder: "ジャンル名" %>
+        </div>
+      </div>
+      <div class='row m-5'>
+        <%= f.submit "Create", class: "create_button" %>
+      </div>
+    </div>
+  <% end %>
