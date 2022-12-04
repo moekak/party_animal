@@ -1,6 +1,4 @@
-@import '~bootstrap/scss/bootstrap';
-@import '@fortawesome/fontawesome-free/scss/fontawesome';
-
+@import 'bootstrap/scss/bootstrap.scss';
 
 // homews top
 *{
@@ -343,8 +341,7 @@ box-shadow: 1px 1px 19px 1px rgba(0, 0, 0, 0.29);
   background-repeat: no-repeat;
   background-position: center;
   overflow-y: hidden;
-  background-color: rgba(0,0,0,0
-);
+  background-color: rgba(0,0,0,0);
 
     width: 100%;
     text-align: center;
