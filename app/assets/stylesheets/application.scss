@@ -24,8 +24,7 @@
   background-repeat: no-repeat;
   background-position: center;
   overflow-y: hidden;
-  background-color: rgba(0,0,0,0
-);
+  background-color: rgba(0,0,0,0);
 
 }
 
@@ -37,10 +36,10 @@
   overflow-y: hidden;
   height: 100vh;
   position: relative;
-  z-index: -2;
+
   text-align: center;
 }
-
+.search{
   background-image: linear-gradient(
     to top,
       rgba(0,0,0,1),
@@ -53,12 +52,9 @@
   background-position: center;
   overflow-y: hidden;
   background-color: rgba(0,0,0,0);
-
-    width: 100%;
-    text-align: center;
-    padding-top: 5%;
-
-
+  width: 100%;
+  text-align: center;
+  padding-top: 5%;
 }
 
 .sign_in{
