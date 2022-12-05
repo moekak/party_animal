@@ -12,3 +12,19 @@
  *
  *= require_tree .
  */
+ .first_container {
+  background-image: linear-gradient(
+    to top,
+      rgba(0,0,0,1),
+      rgba(0,0,0,0),
+      rgba(0,0,0,1)
+    ),
+    image-url("BC.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow-y: hidden;
+  background-color: rgba(0,0,0,0
+);
+
+}
