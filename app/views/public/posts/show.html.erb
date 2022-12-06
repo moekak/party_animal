@@ -111,7 +111,7 @@
             <h2 class='header_name'>Attendess (<%= @post.group_users.count %>)</h2>
               <div class="row mt-4">
                  <% @post.group_users.each do |user| %>
-                   <div class='col-2 p-0 '>
+                   <div class='col-2 p-0'>
                      <%= image_tag user.user.get_profile_image(50,50), class: "going" %>
                    </div>
                   <% end %>
