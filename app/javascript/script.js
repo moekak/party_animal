@@ -99,5 +99,28 @@ function() {
       },
     ],
   });
+  $("#events_created").slick({
+    slidesToShow: 3,
+    responsive: [
+      {
+        breakpoint: 1300, // 768〜1023px以下のサイズに適用
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 991, // 480〜767px以下のサイズに適用
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 650, // 〜479px以下のサイズに適用
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  });
 }
 );

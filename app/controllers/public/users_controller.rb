@@ -7,6 +7,7 @@ class Public::UsersController < ApplicationController
     @user = current_user
     @bookmarks = Bookmark.where(user_id: current_user.id)
     @post_group_users = GroupUser.where(user_id: current_user.id)
+    @posts = Post.where(user_id: current_user.id)
   end
 
 

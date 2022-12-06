@@ -95,6 +95,44 @@
               </div>
             <% end %>
           </div>
+          <!--作成したイベント-->
+          <h2 class='mt-5'>Events you created</h2>
+          <div class='row mt-5 mx-2 ' id= "events_created">
+            <% @posts.each do |submission| %>
+              <div class='mx-4 mb-5  p-0 first_post_second'>
+                <div class='card card_container'>
+                  <div class='card_image'>
+                    <% if submission.image.attached? %>
+                      <%= image_tag submission.image, class: 'card-image-header' %>
+                    <% end %>
+                  </div>
+                  <div class='card_button'>
+                    <%= link_to post_path(submission.id) do %>
+                        <i class="fas fa-bars" style="color:white;"></i>
+                    <% end %>
+                  </div>
+                </div>
+                <div class='container px-4'>
+                  <div class='row mt-5'>
+                    <div class='col justify-content-center'>
+                      <p class='post_date_second justify-content-center'><%= submission.date %> | <%=submission.time.strftime( "%H:%M" ) %> </p>
+                    </div>
+                  </div>
+                  <div class='row'>
+                    <div class='col'>
+                      <h3 class='post_title_second'><%= submission.title %></h3>
+                    </div>
+                  </div>
+                  <div class='row'>
+                    <div class='col'>
+                      <p class='post_description_second'><%= submission.description %></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+
 
 
 
