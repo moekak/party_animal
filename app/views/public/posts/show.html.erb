@@ -20,22 +20,22 @@
 
           </div>
           <div class='row  first_container_post'>
-           <% if @post.image.attached? %>
+            <% if @post.image.attached? %>
               <%= image_tag @post.image, class: 'card-image-header_second' %>
             <% end %>
-         </div>
-         <div class='row mt-5'>
-           <h1 class="second"><%= @post.title%></h1>
-         </div>
-         <div class='row mt-3'>
-           <p><%= @post.description %></p>
-         </div>
-         <div class='row info mt-5 mb-5'>
-           detailed information
-         </div>
-         <div class='row details'>
-           <div class='col-lg-1 col-md-1 col-sm-1 col-1'>
-             <i class="far fa-calendar-plus"></i>
+          </div>
+          <div class='row mt-5'>
+            <h1 class="second"><%= @post.title%></h1>
+          </div>
+          <div class='row mt-3'>
+            <p><%= @post.description %></p>
+          </div>
+          <div class='row info mt-5 mb-5'>
+            detailed information
+          </div>
+          <div class='row details'>
+            <div class='col-lg-1 col-md-1 col-sm-1 col-1'>
+              <i class="far fa-calendar-plus"></i>
            </div>
            <div class='col-lg-5 col-md-5 col-sm-5 col-3'>
              <p>date</p>

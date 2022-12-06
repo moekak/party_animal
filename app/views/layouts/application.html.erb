@@ -32,6 +32,9 @@
                   <%= link_to "My page", user_path(current_user), class: "word" %>
                 </li>
                 <li class="nav-item m-4">
+                  <%= link_to "Create", new_post_path, class: "word" %>
+                </li>
+                <li class="nav-item m-4">
                   <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "word" %>
                 </li>
               <% else %>
