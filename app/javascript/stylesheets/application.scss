@@ -26,22 +26,22 @@
 // homes top
 // first_container
 
-.first_container {
-  background-image: linear-gradient(
-    to top,
-      rgba(0,0,0,1),
-      rgba(0,0,0,0),
-      rgba(0,0,0,1)
-    ),
-    image-url("BC.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  overflow-y: hidden;
-  background-color: rgba(0,0,0,0
-);
+// .first_container {
+//   background-image: linear-gradient(
+//     to top,
+//       rgba(0,0,0,1),
+//       rgba(0,0,0,0),
+//       rgba(0,0,0,1)
+//     ),
+//     image-url("BC.jpg");
+//   background-size: 100%;
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   overflow-y: hidden;
+//   background-color: rgba(0,0,0,0
+// );
 
-}
+// }
 
 .first_container h1{
   color: rgba(255, 255, 255, 0.73);
@@ -256,32 +256,32 @@
   justify-content: center;
 
 }
-  .posts_container{
-  background-image: image-url("part2.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  overflow-y: hidden;
-  height: 100vh;
-  position: relative;
-  text-align: center;
-}
+//   .posts_container{
+//   background-image: image-url("part2.jpg");
+//   background-size: 100%;
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   overflow-y: hidden;
+//   height: 100vh;
+//   position: relative;
+//   text-align: center;
+// }
   .see{
     font-style: italic;
     color: black;
     padding: 5px 8px;
   }
-.posts_container{
-  background-image: image-url("part2.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  overflow-y: hidden;
-  height: 100vh;
-  position: relative;
-  z-index: -2;
-  text-align: center;
-}
+// .posts_container{
+//   background-image: image-url("part2.jpg");
+//   background-size: 100%;
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   overflow-y: hidden;
+//   height: 100vh;
+//   position: relative;
+//   z-index: -2;
+//   text-align: center;
+// }
 .posts_container::before{
   content: "";
   position: absolute;
@@ -339,26 +339,26 @@ box-shadow: 1px 1px 19px 1px rgba(0, 0, 0, 0.29);
 .arrow p{
   border: 1px solid, yellow;
 }
-.search{
-  background-image: linear-gradient(
-    to top,
-      rgba(0,0,0,1),
-      rgba(0,0,0,0),
-      rgba(0,0,0,1)
-    ),
-    image-url("wp2825443.jpg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  overflow-y: hidden;
-  background-color: rgba(0,0,0,0);
+// .search{
+//   background-image: linear-gradient(
+//     to top,
+//       rgba(0,0,0,1),
+//       rgba(0,0,0,0),
+//       rgba(0,0,0,1)
+//     ),
+//     image-url("wp2825443.jpg");
+//   background-size: 100%;
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   overflow-y: hidden;
+//   background-color: rgba(0,0,0,0);
 
-    width: 100%;
-    text-align: center;
-    padding-top: 5%;
+//     width: 100%;
+//     text-align: center;
+//     padding-top: 5%;
 
 
-}
+// }
 
 
 .posts_page{
@@ -440,24 +440,24 @@ box-shadow: 1px 1px 19px 1px rgba(0, 0, 0, 0.29);
 }
 // sign in form (session/new)
 
-.sign_in{
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  background-image: image-url("ocean.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  color: white;
-  width: 100%;
-  overflow-y: hidden;
-  padding: 10% 0;
-  height: 100vh;
+// .sign_in{
+//   text-align: center;
+//   align-items: center;
+//   justify-content: center;
+//   display: flex;
+//   flex-direction: column;
+//   background-image: image-url("ocean.jpg");
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   background-position: center;
+//   position: relative;
+//   color: white;
+//   width: 100%;
+//   overflow-y: hidden;
+//   padding: 10% 0;
+//   height: 100vh;
 
-}
+// }
 .sign_in::before{
   content: "";
   background-color: rgb(0, 0, 0,0.8);
@@ -917,25 +917,25 @@ box-shadow: 1px 1px 19px 1px rgba(0, 0, 0, 0.29);
   .search h3{
     font-size: 1rem;
   }
-  .search{
-   background-image: linear-gradient(
-    to top,
-      rgba(0,0,0,1),
-      rgba(0,0,0,0),
-      rgba(0,0,0,1)
-    ),
-    image-url("wp2825443.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: flex-start;
-    overflow-y: hidden;
-    background-color: rgba(0,0,0,0
-  );
+  // .search{
+  // background-image: linear-gradient(
+  //   to top,
+  //     rgba(0,0,0,1),
+  //     rgba(0,0,0,0),
+  //     rgba(0,0,0,1)
+  //   ),
+  //   image-url("wp2825443.jpg");
+  //   background-size: 100%;
+  //   background-repeat: no-repeat;
+  //   background-position: flex-start;
+  //   overflow-y: hidden;
+  //   background-color: rgba(0,0,0,0
+  // );
 
-      width: 100%;
-      text-align: center;
-      padding-top: 5%;
-  }
+  //     width: 100%;
+  //     text-align: center;
+  //     padding-top: 5%;
+  // }
   // user show page
   #join_events{
     margin: 0 5%;
@@ -1017,26 +1017,26 @@ box-shadow: 1px 1px 19px 1px rgba(0, 0, 0, 0.29);
   background: none;
   border: none;
 }
-.search{
-   background-image: linear-gradient(
-    to top,
-      rgba(0,0,0,1)20%,
-      rgba(0,0,0,0),
-      rgba(0,0,0,1)
-    ),
-    image-url("wp2825443.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: flex-start;
-    overflow-y: hidden;
-    background-color: rgba(0,0,0,0
-  );
+// .search{
+//   background-image: linear-gradient(
+//     to top,
+//       rgba(0,0,0,1)20%,
+//       rgba(0,0,0,0),
+//       rgba(0,0,0,1)
+//     ),
+//     image-url("wp2825443.jpg");
+//     background-size: 100%;
+//     background-repeat: no-repeat;
+//     background-position: flex-start;
+//     overflow-y: hidden;
+//     background-color: rgba(0,0,0,0
+//   );
 
-      width: 100%;
-      text-align: center;
-      padding-top: 5%;
+//       width: 100%;
+//       text-align: center;
+//       padding-top: 5%;
 
-  }
+//   }
   .post_title{
     font-size: 1.3rem;
   }
@@ -1103,19 +1103,19 @@ box-shadow: 1px 1px 19px 1px rgba(0, 0, 0, 0.29);
     font-size: 1.7rem;
     padding-top: 5%;
   }
-  .search{
-    background-image: linear-gradient(
-      to top,
-        rgba(0,0,0,1),
-        rgba(0,0,0,0),
-        rgba(0,0,0,1)
-      ),
-      image-url("wp2825443.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: flex-start;
-    overflow-y: hidden;
-  }
+  // .search{
+  //   background-image: linear-gradient(
+  //     to top,
+  //       rgba(0,0,0,1),
+  //       rgba(0,0,0,0),
+  //       rgba(0,0,0,1)
+  //     ),
+  //     image-url("wp2825443.jpg");
+  //   background-size: 100%;
+  //   background-repeat: no-repeat;
+  //   background-position: flex-start;
+  //   overflow-y: hidden;
+  // }
 
 
 
