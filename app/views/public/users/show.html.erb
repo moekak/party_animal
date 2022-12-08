@@ -28,11 +28,13 @@
               <div class='mx-4 mb-5  p-0 first_post_second'>
                 <div class='card card_container'>
                   <div class='card_image'>
-                    <% if bookmark.post.image.attached? %>
-                      <%= image_tag bookmark.post.image, class: 'card-image-header' %>
-                    <% end %>
+                     <%= link_to post_path(bookmark.post.id) do %>
+                        <% if bookmark.post.image.attached? %>
+                          <%= image_tag bookmark.post.image, class: 'card-image-header' %>
+                        <% end %>
+                      <% end %>
                   </div>
-                  <div class='card_button'>
+                  <div class='card_button-second'>
                     <%= link_to post_path(bookmark.post.id) do %>
                         <i class="fas fa-bars" style="color:white;"></i>
                     <% end %>
@@ -65,11 +67,13 @@
               <div class='mx-4 mb-5  p-0 first_post_second'>
                 <div class='card card_container'>
                   <div class='card_image'>
-                    <% if group_user.post.image.attached? %>
-                      <%= image_tag group_user.post.image, class: 'card-image-header' %>
+                    <%= link_to post_path(group_user.post.id) do %>
+                      <% if group_user.post.image.attached? %>
+                        <%= image_tag group_user.post.image, class: 'card-image-header' %>
+                      <% end %>
                     <% end %>
                   </div>
-                  <div class='card_button'>
+                  <div class='card_button-second'>
                     <%= link_to post_path(group_user.post.id) do %>
                         <i class="fas fa-bars" style="color:white;"></i>
                     <% end %>
@@ -102,11 +106,13 @@
               <div class='mx-4 mb-5  p-0 first_post_second'>
                 <div class='card card_container'>
                   <div class='card_image'>
-                    <% if submission.image.attached? %>
-                      <%= image_tag submission.image, class: 'card-image-header' %>
+                    <%= link_to post_path(submission.id) do %>
+                      <% if submission.image.attached? %>
+                        <%= image_tag submission.image, class: 'card-image-header' %>
+                      <% end %>
                     <% end %>
                   </div>
-                  <div class='card_button'>
+                  <div class='card_button-second'>
                     <%= link_to post_path(submission.id) do %>
                         <i class="fas fa-bars" style="color:white;"></i>
                     <% end %>
