@@ -3,7 +3,7 @@
 // homews top
 *{
   padding: 0;
-  margin:0;
+  margin: 0;
   box-sizing: border-box;
 }
 
@@ -146,7 +146,8 @@
 .circle_one{
   display: flex;
   align-items: center;
-  justify-cotent: flex-start;
+  padding: 0;
+
 
 }
 .circle p{
@@ -576,9 +577,16 @@ box-shadow: 1px 1px 19px 1px rgba(0, 0, 0, 0.29);
   text-decoration: none;
 
 }
+.comment_submit_second{
+  padding: 4% 8%;
+  border-radius: 10px;
+  border: none;
+  background-color: green;
+  color: white;
+}
 
 .comment_submit{
-  padding: 5% 8%;
+  padding: 1% 2%;
   border-radius: 10px;
   border: none;
   background-color: green;
@@ -892,10 +900,11 @@ box-shadow: 1px 1px 19px 1px rgba(0, 0, 0, 0.29);
   .header_name h2{
     font-size: 1.5rem;
   }
-
-  .comment_submit{
-    padding: 2% 4%;
+  .comment_submit_second{
+    padding: 2% 3%;
   }
+
+
 // sign uppage
   .sign_in_container{
     width: 50%;
@@ -947,25 +956,7 @@ box-shadow: 1px 1px 19px 1px rgba(0, 0, 0, 0.29);
   .search h3{
     font-size: 1rem;
   }
-  // .search{
-  // background-image: linear-gradient(
-  //   to top,
-  //     rgba(0,0,0,1),
-  //     rgba(0,0,0,0),
-  //     rgba(0,0,0,1)
-  //   ),
-  //   image-url("wp2825443.jpg");
-  //   background-size: 100%;
-  //   background-repeat: no-repeat;
-  //   background-position: flex-start;
-  //   overflow-y: hidden;
-  //   background-color: rgba(0,0,0,0
-  // );
 
-  //     width: 100%;
-  //     text-align: center;
-  //     padding-top: 5%;
-  // }
   // user show page
   #join_events{
     margin: 0 5%;
@@ -1082,6 +1073,10 @@ box-shadow: 1px 1px 19px 1px rgba(0, 0, 0, 0.29);
   .sign_in_container{
     width: 80%;
   }
+  // post_comment index page
+  .comment_submit{
+    padding: 2% 4%;
+  }
 
 
 }
@@ -1129,7 +1124,7 @@ box-shadow: 1px 1px 19px 1px rgba(0, 0, 0, 0.29);
     font-size: 0.7rem;
   }
   .comment_name{
-    font-size: 1rem;
+    font-size: 1r;
   }
 }
 @media only screen and (max-width:400px) {

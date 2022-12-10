@@ -32,8 +32,7 @@ class Public::PostCommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     post_comment = @post.post_comments.find(params[:id])
     if post_comment.update(post_comment_params)
-      flash[:notice] = "You have updated user successfully."
-      redirect_to posts_path
+      redirect_to post_path(@post.id)
     else
       render :edit
     end

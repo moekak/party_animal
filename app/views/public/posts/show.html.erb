@@ -2,7 +2,7 @@
  <!-- first_container -->
  <div class='container main'>
    <div class='row my-5 justify-content-center'>
-     <div class='col-lg-6 col-md-11 col-sm-12 col-11 mt-5 mx-5'>
+     <div class='col-lg-6 col-md-12 col-sm-12 col-11 mt-5 mx-5'>
        <div class='container'>
           <div class='row'>
             <div class='col mb-4'>
@@ -84,8 +84,8 @@
           </div>
        </div>
      </div>
-     <div class='col-lg-3 col-md-11 col-sm-12 col-11 mt-5 mx-5'>
-        <div class="container">
+     <div class='col-lg-3 col-md-11 col-sm-12 col-11 mt-5 mx-5 p-0'>
+        <div class="container p-0">
             <h2 class='header_name'>Organizer</h2>
             <div class='row profile_image_container mt-5 justify-content-center'>
               <%= image_tag @post.user.get_profile_image(100, 100), class: "profile_pic" %>
@@ -166,7 +166,7 @@
                 <%= f.text_area :comment, rows: '5', placeholder: "Write your comment here", class: 'text' %>
               </div>
               <div class='row'>
-                <%= f.submit "submit", class: "comment_submit mt-4" %>
+                <%= f.submit "submit", class: "comment_submit_second mt-4" %>
               </div>
             <% end %>
           </div>

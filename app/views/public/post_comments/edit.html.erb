@@ -1,8 +1,8 @@
 <%= form_with model: [@post, @post_comment], url: post_post_comment_path, method: :patch do |f| %>
-  <div class='row'>
+  <div class='row  m-5 p-0'>
     <%= f.text_area :comment, rows: '5', placeholder: "Write your comment here", class: 'text' %>
   </div>
-  <div class='row'>
-    <%= f.submit "submit", class: "comment_submit mt-4" %>
+  <div class='row m-5'>
+    <%= f.submit "submit", class: "comment_submit" %>
   </div>
  <% end %>
