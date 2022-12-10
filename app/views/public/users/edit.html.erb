@@ -4,7 +4,7 @@
           <h1>Edit</h1>
         </div>
         <%= form_with model: @user, url: user_path, method: :patch do |f| %>
-
+          <!--プロフィール画像を追加-->
           <div class='col-3'>
             <%= f.file_field :image, accept: "image/*" %>
           </div>

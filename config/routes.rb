@@ -15,9 +15,9 @@ Rails.application.routes.draw do
   scope module: :public do
     root to: "homes#top"
     get "/about" => "homes#about"
-    resources :users, only: [:edit, :create, :update, :destroy, :show, :index]
+    resources :users, only: [:edit, :create, :update, :destroy, :show]
     resources :posts, only: [:index, :edit, :create, :update, :destroy, :new, :show] do
-      resources :post_comments, only: [:create, :destroy, :show, :edit, :index, :update]
+      resources :post_comments, only: [:create, :destroy, :edit, :index, :update]
       resource :favorites, only: [:create, :destroy]
       resource :group_users, only: [:create, :destroy]
       resource :bookmarks, only: [:create, :destroy]

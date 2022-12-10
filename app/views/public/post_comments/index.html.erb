@@ -26,6 +26,7 @@
               </div>
             </div>
             <div class='row'>
+              <!--コメントした人とログインユーザが同じ場合に表示させる-->
               <% if comment.user == current_user %>
                 <div class='col-4 mt-4'>
                   <%= link_to "edit", edit_post_post_comment_path(post_id: @post.id, id: comment.id), class: "btn btn-success" %>
@@ -40,6 +41,7 @@
       </div>
     </div>
     <div class="row justify-content-center">
+      <!--５件以上コメントがある場合ページネーション使用-->
       <%= paginate @post_comments %>
     </div>
   </div>

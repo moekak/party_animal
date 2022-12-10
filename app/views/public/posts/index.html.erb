@@ -1,7 +1,6 @@
 
     <!-- main section -->
-
-
+    <!--search section-->
     <div class='search'>
       <h1 class='posts_title mt-5'>Welcome to <span>PARTY ANIMALS</span></h1>
       <h3>-Let's explore your favorites international parties-</h3>
@@ -11,49 +10,50 @@
         </div>
       <% end %>
     </div>
-
-        <div class="container-fluid posts_page">
-            <div class='row mt-5 justify-content-center '>
-                <% @posts.each do |submission| %>
-                    <div class='col-xl-3 col-lg-3 col-md-5 col-sm-5 col-5 mx-2 mb-5  p-0 first_post'>
-                        <div class='card'>
-                            <div class='card_image'>
-                                <%= link_to post_path(submission.id) do %>
-                                    <% if submission.image.attached? %>
-                                        <%= image_tag submission.image, class: 'card-image-header' %>
-                                    <% end %>
+    <!--イベント一覧-->
+    <div class="container-fluid posts_page">
+        <div class='row mt-5 justify-content-center '>
+            <% @posts.each do |submission| %>
+                <div class='col-xl-3 col-lg-3 col-md-5 col-sm-5 col-5 mx-2 mb-5  p-0 first_post'>
+                    <div class='card'>
+                        <div class='card_image'>
+                            <%= link_to post_path(submission.id) do %>
+                                <% if submission.image.attached? %>
+                                    <%= image_tag submission.image, class: 'card-image-header' %>
                                 <% end %>
-                            </div>
-                            <div class='card_button'>
-                                <%= link_to post_path(submission.id) do %>
-                                    <i class="fas fa-bars" style="color:white;"></i>
-                                <% end %>
+                            <% end %>
+                        </div>
+                        <div class='card_button'>
+                            <%= link_to post_path(submission.id) do %>
+                                <i class="fas fa-bars" style="color:white;"></i>
+                            <% end %>
+                        </div>
+                    </div>
+                    <div class='container px-4 py-2'>
+                        <div class='row mt-4'>
+                            <div class='col justify-content-center'>
+                                <p class='post_date justify-content-center'><%= submission.date %> | <%= submission.time.strftime( "%H:%M" ) %> </p>
                             </div>
                         </div>
-                        <div class='container px-4 py-2'>
-                            <div class='row mt-4'>
-                                <div class='col justify-content-center'>
-                                    <p class='post_date justify-content-center'><%= submission.date %> | <%= submission.time.strftime( "%H:%M" ) %> </p>
-                                </div>
+                        <div class='row'>
+                            <div class='col px-2'>
+                                <h3 class='post_title'><%= submission.title %></h3>
                             </div>
-                            <div class='row'>
-                                <div class='col px-2'>
-                                   <h3 class='post_title'><%= submission.title %></h3>
-                                </div>
-                            </div>
-                            <div class='row'>
-                                <div class='col px-1'>
-                                   <p class='post_description'><%= submission.description %></p>
-                                </div>
+                        </div>
+                        <div class='row'>
+                            <div class='col px-1'>
+                                <p class='post_description'><%= submission.description %></p>
                             </div>
                         </div>
                     </div>
-                <% end %>
-            </div>
-            <div class='row justify-content-center'>
-               <%= paginate @posts %>
-            </div>
+                </div>
+            <% end %>
         </div>
+        <div class='row justify-content-center'>
+            <!--９件以上イベント件数があった場合ページネーション適用-->
+            <%= paginate @posts %>
+        </div>
+    </div>
   </body>
 </html>
 
