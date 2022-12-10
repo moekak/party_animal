@@ -888,6 +888,12 @@ box-shadow: 1px 1px 19px 1px rgba(0, 0, 0, 0.29);
   .info p{
     font-size: 0.8rem;
   }
+  .third_container p{
+    font-size: 0.8rem;
+  }
+  .title h1{
+    font-size: 1.8rem;
+  }
   // post index page
   .posts_title{
     font-size: 2.5rem;
@@ -1166,4 +1172,23 @@ box-shadow: 1px 1px 19px 1px rgba(0, 0, 0, 0.29);
   }
 
 
+
+}
+@media only screen and (max-width:380px) {
+  // top page
+  .first_container{
+    height: 250px;
+  }
+}
+@media only screen and (max-width:360px) {
+  // top page
+  .first_container{
+    height: 240px;
+  }
+}
+@media only screen and (max-width:330px) {
+  // top page
+  .first_container{
+    height: 200px;
+  }
 }
