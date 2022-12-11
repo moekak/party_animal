@@ -443,25 +443,6 @@ box-shadow: 1px 1px 19px 1px rgba(0, 0, 0, 0.29);
   display: flex;
 }
 // sign in form (session/new)
-
-// .sign_in{
-//   text-align: center;
-//   align-items: center;
-//   justify-content: center;
-//   display: flex;
-//   flex-direction: column;
-//   background-image: image-url("ocean.jpg");
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   background-position: center;
-//   position: relative;
-//   color: white;
-//   width: 100%;
-//   overflow-y: hidden;
-//   padding: 10% 0;
-//   height: 100vh;
-
-// }
 .sign_in::before{
   content: "";
   background-color: rgb(0, 0, 0,0.8);
