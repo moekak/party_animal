@@ -24,6 +24,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
+              <!--ログインしている場合-->
               <% if user_signed_in? %>
                 <li class="nav-item m-4">
                   <%= link_to "Home", posts_path, class: "word" %>
@@ -37,6 +38,7 @@
                 <li class="nav-item m-4">
                   <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "word" %>
                 </li>
+                <!--ログインしていない場合-->
               <% else %>
                 <li class="nav-item m-4">
                    <%= link_to "Home", root_path, class: "word" %>

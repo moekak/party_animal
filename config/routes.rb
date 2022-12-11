@@ -18,7 +18,6 @@ Rails.application.routes.draw do
     resources :users, only: [:edit, :create, :update, :destroy, :show]
     resources :posts, only: [:index, :edit, :create, :update, :destroy, :new, :show] do
       resources :post_comments, only: [:create, :destroy, :edit, :index, :update]
-      resource :favorites, only: [:create, :destroy]
       resource :group_users, only: [:create, :destroy]
       resource :bookmarks, only: [:create, :destroy]
       collection do

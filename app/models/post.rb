@@ -17,14 +17,7 @@ class Post < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_one_attached :image
 
-  def favorited_by?(user)
-    favorites.where(user_id: user.id).exists?
-  end
-
-  def is_owned_by?(user)
-    owner.id == user.id
-  end
-
+  
   def includesUser?(user)
     group_users.exists?(user_id: user.id)
   end

@@ -31,7 +31,6 @@ class Public::PostsController < ApplicationController
    def update
     submission = Post.find(params[:id])
     if submission.update(post_params)
-      flash[:notice] = "You have updated post successfully."
       redirect_to posts_path
     else
       render :edit

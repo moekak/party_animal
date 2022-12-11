@@ -13,7 +13,7 @@ class User < ApplicationRecord
 
   has_one_attached :image
 
-
+# ゲストログイン
   def self.guest
     find_or_create_by!(name: 'guestuser' ,email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64

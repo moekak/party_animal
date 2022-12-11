@@ -4,6 +4,7 @@
    <div class='row my-5 justify-content-center'>
      <div class='col-lg-6 col-md-12 col-sm-12 col-11 mt-5 mx-5'>
        <div class='container'>
+         <!--ブックマーク-->
           <div class='row'>
             <div class='col mb-4'>
               <% if @post.bookmarked_by?(current_user) %>
@@ -16,9 +17,8 @@
                 <% end %>
               <% end %>
             </div>
-
-
           </div>
+          <!--イベント詳細-->
           <div class='row  first_container_post'>
             <% if @post.image.attached? %>
               <%= image_tag @post.image, class: 'card-image-header_second' %>
@@ -68,9 +68,11 @@
          </div>
          <div class='row mt-5 justify-content-center'>
             <div class='col justify-content-center'>
+              <!--投稿したユーザーとログインユーザーが同じ場合に表示させる-->
               <% if @post.user_id == current_user.id  %>
                 <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-sm btn-success mb-4 px-4 py-2" %>
               <% end %>
+              <!--イベントの開催日時が現在の日時より先の場合に表示させる-->
               <% if @post.date.to_s > DateTime.now  %>
                 <% if @post.includesUser?(current_user) %>
                   <%= link_to 'cancel this event', post_group_users_path(@post), method: :delete, class: "btn btn-sm btn-danger mb-4 px-4 py-2" %>
@@ -86,97 +88,89 @@
      </div>
      <div class='col-lg-3 col-md-12 col-sm-12 col-11 mt-5 mx-5'>
         <div class="container">
-            <h2 class='header_name'>Organizer</h2>
-            <div class='row profile_image_container mt-5 justify-content-center'>
-              <%= image_tag @post.user.get_profile_image(100, 100), class: "profile_pic" %>
+          <h2 class='header_name'>Organizer</h2>
+          <div class='row profile_image_container mt-5 justify-content-center'>
+            <%= image_tag @post.user.get_profile_image(100, 100), class: "profile_pic" %>
+          </div>
+          <div class="row border-bottom mb-4 mt-4 center-block">
+            <div class="col-1">
+              <i class="fas fa-user"></i>
             </div>
-            <div class="row border-bottom mb-4 mt-4 center-block">
-              <div class="col-1">
-                <i class="fas fa-user"></i>
-              </div>
-              <div class='col'>
-                <%= @post.user.name %>
-              </div>
-            </div>
-            <div class="row border-bottom">
-              <div class="col-1">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div class='col'>
-                <%= @post.user.email %>
-              </div>
+            <div class='col'>
+              <%= @post.user.name %>
             </div>
           </div>
-          <div class="container pt-5 ">
-            <h2 class='header_name'>Attendess (<%= @post.group_users.count %>)</h2>
-              <div class="row mt-4">
-                 <% @post.group_users.each do |user| %>
-                   <div class='col-2 p-0'>
-                     <%= image_tag user.user.get_profile_image(50,50), class: "going" %>
-                   </div>
-                  <% end %>
-              </div>
-          </div>
-
-          <div class='container'>
-            <div class='row pt-5 pb-5'>
-              <div class='col'>
-                <%= link_to post_post_comments_path(post_id: @post.id) do %>
-                  <h2 class='header_name'>Comment(<%= @post.post_comments.count %>)</h2>
-                <% end %>
-              </div>
+          <div class="row border-bottom">
+            <div class="col-1">
+              <i class="fas fa-envelope"></i>
             </div>
+            <div class='col'>
+              <%= @post.user.email %>
+            </div>
+          </div>
+        </div>
+        <div class="container pt-5 ">
+          <h2 class='header_name'>Attendess (<%= @post.group_users.count %>)</h2>
+          <div class="row mt-4">
+            <% @post.group_users.each do |user| %>
+              <div class='col-2 p-0'>
+                <%= image_tag user.user.get_profile_image(50,50), class: "going" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class='container'>
+          <div class='row pt-5 pb-5'>
+            <div class='col'>
+              <%= link_to post_post_comments_path(post_id: @post.id) do %>
+                <h2 class='header_name'>Comment(<%= @post.post_comments.count %>)</h2>
+              <% end %>
+            </div>
+          </div>
+          <!--コメント件数が６以下の場合はすべて表示させる-->
           <% if @post.post_comments.count < 6 %>
             <% @post.post_comments.each do |post_comment| %>
-              <%# if post_comment.comment.count < 4 %>
-                <div class='row'>
-                  <div class= "col px-0">
-                    <div class='container'>
-                      <div class='row'>
-                        <div class='col-3 px-0'>
-                          <%= image_tag post_comment.user.get_profile_image(50,50),class: 'going' %>
-                        </div>
-                        <div class='col px-0'>
-                          <div class='container'>
-                            <div class='row'>
-                              <p class='bold'><%=post_comment.user.name %></p>
-                            </div>
-                            <div class='row'>
-                              <%= post_comment.comment %>
-                            </div>
+              <div class='row'>
+                <div class= "col px-0">
+                  <div class='container'>
+                    <div class='row'>
+                      <div class='col-3 px-0'>
+                        <%= image_tag post_comment.user.get_profile_image(50,50),class: 'going' %>
+                      </div>
+                      <div class='col px-0'>
+                        <div class='container'>
+                          <div class='row'>
+                            <p class='bold'><%=post_comment.user.name %></p>
+                          </div>
+                          <div class='row'>
+                            <%= post_comment.comment %>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              <%# else %>
-                <%#= link_to "see more", user_path %>
-              <%# end %>
+              </div>
             <% end %>
+            <!--コメント件数が６件以上の場合に表示させる-->
           <% else %>
             <%= link_to "see more", post_post_comments_path(post_id: @post.id) %>
           <% end %>
-
-
-          </div>
-          <div class='container mt-5'>
-            <%= form_with model: [@post, @post_comment] do |f| %>
-              <div class='row'>
-                <%= f.text_area :comment, rows: '5', placeholder: "Write your comment here", class: 'text' %>
-              </div>
-              <div class='row'>
-                <%= f.submit "submit", class: "comment_submit_second mt-4" %>
-              </div>
-            <% end %>
-          </div>
+        </div>
+        <!--コメント送信-->
+        <div class='container mt-5'>
+          <%= form_with model: [@post, @post_comment] do |f| %>
+            <div class='row'>
+              <%= f.text_area :comment, rows: '5', placeholder: "Write your comment here", class: 'text' %>
+            </div>
+            <div class='row'>
+              <%= f.submit "submit", class: "comment_submit_second mt-4" %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
-
-     </div>
-   </div>
- </div>
+  </div>
 <% require "date" %>
 
 

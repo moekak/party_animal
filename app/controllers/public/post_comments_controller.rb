@@ -3,13 +3,11 @@ class Public::PostCommentsController < ApplicationController
     submission = Post.find(params[:post_id])
     comment = current_user.post_comments.new(post_comment_params)
     comment.post_id = submission.id
-
     if comment.save
       redirect_to post_path(submission.id)
     else
       redirect_to post_path(submission.id)
     end
-
   end
 
   def destroy
